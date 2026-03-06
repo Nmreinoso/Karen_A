@@ -1,46 +1,65 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 <MainLayout title="Home">
-  <div class="hero-section card">
-    <div class="profile-layout">
-      <div class="image-placeholder main-photo">
-        <span>[Professional Photo Here]</span>
+  <section class="card hero">
+    <div class="hero-flex">
+      <div class="photo-circle">
+        <img src={`${base}/images/profile.jpg`} alt="Karen Arze" onerror="this.style.display='none'"/>
+        <span>Photo</span>
       </div>
-      <div class="bio-text">
+      <div class="hero-text">
         <h1>Karen Arze</h1>
-        <p class="intro-quote">"Quick to adapt and eager to learn, I am reliable enough to take on leadership roles..."</p>
-        <div class="contact-strip">
-           <span>📍 Virginia</span> | <span>📞 757-515-****</span>
+        <p class="intro-text">Quick to adapt and eager to learn, I am reliable enough to take on leadership roles and always strive for work that can model what I would like to see in others. I'm always enthusiastic to apply my experiences into an environment that appreciates organization and efficiency!</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="grid-layout">
+    <aside class="card info-sidebar">
+      <h3>Personal Info</h3>
+      <p><strong>📍 State:</strong> Virginia</p>
+      <p><strong>📞 Phone:</strong> 757-515-****</p>
+      <p><strong>✉️ Email:</strong> karen**********@yahoo.com</p>
+    </aside>
+
+    <section class="card interests-section">
+      <h3>My Interests</h3>
+      <div class="interests-grid">
+        <div class="interest-item">
+          <h4>🏖️ Long Walks on the Beach</h4>
+          <p>Even if it's a bit of a drive, it's always worth being able to see the beautiful sunrise!</p>
+        </div>
+        <div class="interest-item">
+          <h4>💃 Dancing</h4>
+          <p>I know Bachata and Merengue and have recently been practicing Jazz and Salsa. Dancing is when I feel most like myself!</p>
+        </div>
+        <div class="interest-item">
+          <h4>🍳 Cooking</h4>
+          <p>I love being experimental with food! My favorite thing is to challenge myself with what ingredients I have to make something my family will still enjoy!</p>
+        </div>
+        <div class="interest-item highlight">
+          <h4>❤️ My Children</h4>
+          <p>My Son and Daughter are my pride and joy! Though they're all grown up already, they will always be my babies at heart.</p>
+          <div class="family-photo">
+            <img src={`${base}/images/family.jpg`} alt="Family" onerror="this.parentNode.style.display='none'"/>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-
-  <div class="interests-grid">
-    <div class="interest-card card">
-      <h3>🏖️ Walks & Sunrises</h3>
-      <p>Even if it's a bit of a drive, it's always worth it.</p>
-    </div>
-    <div class="interest-card card">
-      <div class="image-placeholder interest-photo">
-        <span>[Family/Children Photo Here]</span>
-      </div>
-      <h3>❤️ My Children</h3>
-      <p>My Son and Daughter are my pride and joy—they'll always be my babies.</p>
-    </div>
+    </section>
   </div>
 </MainLayout>
 
 <style>
-  .profile-layout { display: flex; gap: 2rem; align-items: center; padding: 2rem; }
-  .image-placeholder { 
-    background: #dee2e6; 
-    border: 2px dashed #adb5bd; 
-    display: flex; align-items: center; justify-content: center; color: #6c757d;
-  }
-  .main-photo { width: 180px; height: 180px; border-radius: 50%; flex-shrink: 0; }
-  .interest-photo { width: 100%; height: 150px; border-radius: 8px; margin-bottom: 1rem; }
-  .intro-quote { font-size: 1.1rem; border-left: 4px solid var(--primary-blue); padding-left: 1rem; font-style: italic; }
-  .interests-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
+  .hero-flex { display: flex; gap: 2rem; align-items: center; }
+  .photo-circle { width: 150px; height: 150px; border-radius: 50%; background: #e0e7ff; border: 3px solid var(--primary-blue); overflow: hidden; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .photo-circle img { width: 100%; height: 100%; object-fit: cover; }
+  .intro-text { font-size: 1.1rem; line-height: 1.6; color: #374151; }
+  .grid-layout { display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; margin-top: 2rem; }
+  .interests-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .interest-item { border-bottom: 1px solid #e5e7eb; padding-bottom: 1rem; }
+  .highlight { background: #f0f7ff; padding: 1rem; border-radius: 8px; border-bottom: none; }
+  .family-photo { margin-top: 10px; height: 100px; background: #cbd5e1; border-radius: 4px; overflow: hidden; }
+  @media (max-width: 768px) { .grid-layout, .interests-grid, .hero-flex { grid-template-columns: 1fr; flex-direction: column; text-align: center; } .photo-circle { margin: 0 auto; } }
 </style>
