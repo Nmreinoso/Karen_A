@@ -2,18 +2,57 @@
 import MainLayout from '../layouts/MainLayout.astro';
 ---
 <MainLayout title="Home">
-    <div class="card">
-        <h2>Welcome</h2>
-        <p>{/* Use the intro text from your requirements here */}</p>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem;">
-            <div>
-                <h3 style="color: var(--warm-brown);">Contact</h3>
-                <p>📍 Virginia<br>📞 757-515-****<br>📧 karen**********@yahoo.com</p>
-            </div>
-            <div>
-                <h3 style="color: var(--warm-brown);">My Loves</h3>
-                <p>Dancing Bachata, long sunrise walks, and my two wonderful children.</p>
-            </div>
+  <section class="intro-box">
+    <h1>Karen Arze</h1>
+    <p class="lead-text">"Quick to adapt and eager to learn, I am reliable enough to take on leadership roles and always strive for work that can model what I would like to see in others."</p>
+    <p>I'm always enthusiastic to apply my experiences into an environment that appreciates organization and efficiency!</p>
+  </section>
+
+  <hr class="soft-divider" />
+
+  <div class="main-grid">
+    <aside class="info-card">
+      <h3>Personal Info</h3>
+      <div class="info-item"><strong>📍 State:</strong> Virginia</div>
+      <div class="info-item"><strong>📞 Phone:</strong> 757-515-****</div>
+      <div class="info-item"><strong>✉️ Email:</strong> karen**********@yahoo.com</div>
+    </aside>
+
+    <section class="interests-area">
+      <h3>My Interests</h3>
+      <div class="interest-grid">
+        <div class="interest-card">
+          <h4>🏖️ Long Walks</h4>
+          <p>Even if it's a bit of a drive, it's always worth being able to see the beautiful sunrise!</p>
         </div>
-    </div>
+        <div class="interest-card">
+          <h4>💃 Dancing</h4>
+          <p>I know Bachata and Merengue, and I’ve been practicing Jazz and Salsa. Dancing is when I feel most like myself!</p>
+        </div>
+        <div class="interest-card">
+          <h4>🍳 Cooking</h4>
+          <p>I love to change up a recipe and experiment with new flavors!</p>
+        </div>
+        <div class="interest-card highlighted">
+          <h4>❤️ My Children</h4>
+          <p>My Son and Daughter are my pride and joy! Though they're all grown up, they will always be my babies at heart.</p>
+        </div>
+      </div>
+    </section>
+  </div>
 </MainLayout>
+
+<style>
+  .intro-box { text-align: center; margin-bottom: 3rem; padding: 2rem; background: #fff; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
+  .lead-text { font-size: 1.25rem; font-style: italic; color: #4a6741; margin-bottom: 1rem; }
+  .main-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; }
+  .info-card { background: white; padding: 1.5rem; border-radius: 15px; border: 1px solid #e0e5df; height: fit-content; }
+  .info-item { margin: 10px 0; font-size: 0.95rem; }
+  .interest-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .interest-card { background: #fff; padding: 1.2rem; border-radius: 12px; border-top: 4px solid #d4a373; font-size: 0.9rem; transition: transform 0.2s; }
+  .interest-card:hover { transform: translateY(-5px); }
+  .highlighted { border-top-color: #4a6741; background: #f9fbf8; }
+  .soft-divider { border: 0; height: 1px; background-image: linear-gradient(to right, transparent, #4a6741, transparent); margin: 2rem 0; opacity: 0.3; }
+  
+  @media (max-width: 768px) { .main-grid, .interest-grid { grid-template-columns: 1fr; } }
+</style>
