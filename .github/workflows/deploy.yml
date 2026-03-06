@@ -22,20 +22,20 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install dependencies
-        # This tells the robot to go into your subfolder first
-        run: npm install
-        working-directory: ./Karen_A 
-
-      - name: Build Astro
-        run: npm run build
-        working-directory: ./Karen_A
+      - name: Install & Build
+        # This one-liner finds your package.json wherever it is and builds there
+        run: |
+          SUBFOLDER=$(find . -name "package.json" -not -path "*/node_modules/*" -exec dirname {} \;)
+          cd $SUBFOLDER
+          npm install
+          npm run build
+          # We move the result to a predictable location for the next step
+          mv dist ../dist_final
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # IMPORTANT: Point this to the dist folder inside your subfolder
-          path: ./Karen_A/dist
+          path: ./dist_final
 
   deploy:
     needs: build
@@ -47,4 +47,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        
