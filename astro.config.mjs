@@ -1,9 +1,11 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  // Your GitHub Pages URL
   site: 'https://Nmreinoso.github.io',
-  // Your Repository Name
-  base: '/Karen_A', 
+  base: '/Karen_A',
   output: 'static',
+  // This helps Astro handle trailing slashes for GitHub Pages
+  build: {
+    format: 'directory'
+  }
 });
