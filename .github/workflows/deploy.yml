@@ -23,18 +23,18 @@ jobs:
           node-version: 20
 
       - name: Install & Build
-        # This one-liner finds your package.json wherever it is and builds there
+        # We are forcing the robot to go into the specific nested folder
         run: |
-          SUBFOLDER=$(find . -name "package.json" -not -path "*/node_modules/*" -exec dirname {} \;)
-          cd $SUBFOLDER
+          cd Karen_A
           npm install
           npm run build
-          # We move the result to a predictable location for the next step
+          # Move the finished site up one level so the 'Upload' step can see it
           mv dist ../dist_final
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
+          # This matches the folder we created above
           path: ./dist_final
 
   deploy:
