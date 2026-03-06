@@ -2,7 +2,7 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://Nmreinoso.github.io',
-  base: '/Karen_A',
-  output: 'static',
+  // Replace 'Nmreinoso' with your GitHub username if different
+  site: 'https://Nmreinoso.github.io', 
+  base: '/Karen_A', 
 });
