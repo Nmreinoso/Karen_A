@@ -1,0 +1,60 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="Resume">
+	<h1>Professional Experience</h1>
+	
+	<div class="job">
+		<header>
+			<h3>Optical Consultant</h3>
+			<span>Nov 2025 - Present</span>
+		</header>
+		<p><strong>***** Eye Care</strong></p>
+	</div>
+
+	<div class="job">
+		<header>
+			<h3>Optometric Technician & Sales</h3>
+			<span>Jan 2024 - Sep 2025</span>
+		</header>
+		<p><strong>National Vision / America’s Best</strong></p>
+		<ul>
+			<li>Assisted Optometrists via remote digital systems for patient testing.</li>
+			<li>Proficient in tonometer, autorefractor, retinal imaging, and visual field testing.</li>
+			<li>Managed insurance eligibility and appointment scheduling.</li>
+			<li>Trained new contact lens wearers with patience and care.</li>
+		</ul>
+	</div>
+
+	<div class="job">
+		<header>
+			<h3>Retail Banker</h3>
+			<span>Feb 2022 - Dec 2023</span>
+		</header>
+		<p><strong>Woodforest Bank</strong></p>
+		<ul>
+			<li>Provided financial literacy and recommended suitable services.</li>
+			<li>Handled vault balancing, cash ordering, and ATM maintenance.</li>
+			<li>Proactively met branch goals through marketing and relationship building.</li>
+		</ul>
+	</div>
+
+	<div class="job">
+		<header>
+			<h3>Store Manager</h3>
+			<span>2011 - 2013</span>
+		</header>
+		<p><strong>Salvation Army</strong></p>
+		<ul>
+			<li>Simultaneously managed operations for 3 locations.</li>
+			<li>Organized intake and layout for maximum efficiency.</li>
+		</ul>
+	</div>
+</Layout>
+
+<style>
+	.job { margin-bottom: 2.5rem; background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
+	header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid #eee; margin-bottom: 10px; }
+	h3 { margin: 0; color: var(--primary); }
+	ul { padding-left: 20px; }
+</style>
