@@ -23,19 +23,15 @@ jobs:
           node-version: 20
 
       - name: Install & Build
-        # We are forcing the robot to go into the specific nested folder
+        # No 'cd' command. We assume package.json is in the main folder.
         run: |
-          cd Karen_A
           npm install
           npm run build
-          # Move the finished site up one level so the 'Upload' step can see it
-          mv dist ../dist_final
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # This matches the folder we created above
-          path: ./dist_final
+          path: ./dist
 
   deploy:
     needs: build
