@@ -2,29 +2,71 @@
 import MainLayout from '../layouts/MainLayout.astro';
 ---
 <MainLayout title="Resume">
-  <div class="card resume-card">
-    <h2 class="section-title">Work Experience</h2>
-    
-    <div class="job">
-      <div class="job-header">
-        <strong>Optical Consultant — ***** Eye Care</strong>
-        <span class="date-tag">Nov 2025 - Current</span>
-      </div>
+  <div class="card resume-paper">
+    <div class="resume-header">
+      <h2>Work Experience</h2>
+      <div class="badge">Microsoft Proficiency</div>
     </div>
 
-    <div class="job">
-      <div class="job-header">
-        <strong>Optometric Technician — National Vision</strong>
-        <span class="date-tag">Jan 2024 - Sep 2025</span>
+    <div class="timeline">
+      <div class="job-block">
+        <div class="job-meta">
+          <span class="date">[Nov 2025] - [Current]</span>
+          <span class="company">***** Eye Care</span>
+        </div>
+        <h3>Optical Consultant</h3>
       </div>
-      <p>Specialized in remote systems and clinical pre-testing (tonometer, retinal imaging).</p>
+
+      <div class="job-block">
+        <div class="job-meta">
+          <span class="date">[Jan 2024] – [Sep 2025]</span>
+          <span class="company">National Vision / America’s Best</span>
+        </div>
+        <h3>Optometric Technician & Sales Representative</h3>
+        <ul>
+          <li>Worked with Remote system, assisting Optometrist in other locations through a digital system.</li>
+          <li>Proficiency in using tonometer, autorefractor, retinal imaging and visual field.</li>
+          <li>Determine insurance coverage eligibility and schedule appointments.</li>
+          <li>Trained new contact lens wearers.</li>
+        </ul>
+      </div>
+
+      <div class="job-block">
+        <div class="job-meta">
+          <span class="date">[Feb 2022] – [Dec 2023]</span>
+          <span class="company">Woodforest Bank</span>
+        </div>
+        <h3>Retail Banker</h3>
+        <ul>
+          <li>Address inquiries or customer concerns by providing financial literacy.</li>
+          <li>Processed transactions, open accounts, file disputes, and update information.</li>
+          <li>Handle branch duties such as cash ordering, balancing vault and ATM.</li>
+        </ul>
+      </div>
+
+      <div class="job-block">
+        <div class="job-meta">
+          <span class="date">[2011] – [2013]</span>
+          <span class="company">Salvation Army</span>
+        </div>
+        <h3>Manager (Assistant & Sales Associate)</h3>
+        <ul>
+          <li>Simultaneously managed employees and store performance for 3 locations.</li>
+          <li>Utilized research to understand product quality for accurate pricing.</li>
+          <li>Organized intake of product and layouts for multiple stores.</li>
+        </ul>
+      </div>
     </div>
-    </div>
+  </div>
 </MainLayout>
 
 <style>
-  .resume-card { padding: 2rem; }
-  .section-title { color: var(--primary-blue); border-bottom: 2px solid var(--soft-blue); padding-bottom: 0.5rem; }
-  .job-header { display: flex; justify-content: space-between; margin-top: 1.5rem; color: var(--primary-blue); }
-  .date-tag { background: var(--soft-blue); padding: 2px 10px; border-radius: 4px; font-size: 0.85rem; }
+  .resume-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-bottom: 2px solid var(--light-blue); padding-bottom: 1rem; }
+  .badge { background: var(--primary-blue); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; }
+  .job-block { margin-bottom: 2.5rem; }
+  .job-meta { display: flex; justify-content: space-between; font-weight: bold; color: var(--primary-blue); margin-bottom: 0.5rem; }
+  h3 { margin: 0 0 10px 0; color: #1f2937; font-size: 1.25rem; }
+  ul { padding-left: 1.2rem; color: #4b5563; }
+  li { margin-bottom: 8px; line-height: 1.4; }
+  @media (max-width: 600px) { .job-meta { flex-direction: column; } }
 </style>
