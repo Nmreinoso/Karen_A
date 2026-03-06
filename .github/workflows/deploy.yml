@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+nname: Deploy to GitHub Pages
 
 on:
   push:
@@ -21,22 +21,19 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          # We removed the 'cache' line to prevent the "lock file not found" error
+          # We removed the 'cache: npm' line because you don't have a lock file yet
 
       - name: Install dependencies
-        # If your files are in a subfolder, change '.' to './Karen_A'
+        # We use 'npm install' instead of 'npm ci' because you are working in the browser
         run: npm install
-        working-directory: . 
 
       - name: Build Astro
         run: npm run build
-        working-directory: .
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # This ensures GitHub finds the 'dist' folder wherever it was built
-          path: ./dist 
+          path: ./dist
 
   deploy:
     needs: build
