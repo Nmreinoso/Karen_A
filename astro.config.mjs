@@ -1,8 +1,10 @@
-// astro.config.mjs
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  // Replace 'Nmreinoso' with your GitHub username if different
-  site: 'https://Nmreinoso.github.io', 
-  base: '/Karen_A', 
+  site: 'https://Nmreinoso.github.io',
+  base: '/Karen_A',
+  trailingSlash: 'always', // This prevents internal link breakage on GH Pages
+  build: {
+    format: 'directory', // Ensures /resume becomes /resume/index.html
+  }
 });
