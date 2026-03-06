@@ -1,81 +1,24 @@
 ---
-const { title } = Astro.props;
-// This automatically pulls '/Karen_A' from your config
-const base = import.meta.env.BASE_URL; 
+// src/layouts/MainLayout.astro
+const base = import.meta.env.BASE_URL;
 ---
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
-    <meta name="viewport" content="width=device-width" />
-    <title>{title} | Karen Arze</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <style is:global>
-        :root {
-            --sage: #4a6741;
-            --cream: #fefae0;
-            --warm-brown: #8b5e3c;
-            --text-dark: #2d3436;
-        }
-        body {
-            font-family: 'Lato', sans-serif;
-            background-color: var(--cream);
-            color: var(--text-dark);
-            margin: 0;
-            line-height: 1.6;
-        }
-        header {
-            background: white;
-            border-bottom: 3px solid var(--sage);
-            padding: 2rem 1rem;
-            text-align: center;
-        }
-        nav {
-            margin-top: 1.5rem;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-        }
-        nav a {
-            text-decoration: none;
-            color: var(--sage);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.3s ease;
-        }
-        nav a:hover { color: var(--warm-brown); }
-        .content-wrapper {
-            max-width: 900px;
-            margin: 3rem auto;
-            padding: 0 2rem;
-        }
-        h1, h2 { font-family: 'Playfair Display', serif; color: var(--sage); }
-        .card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border: 1px solid rgba(74, 103, 65, 0.1);
-        }
-        footer { text-align: center; padding: 4rem 1rem; color: #7f8c8d; font-size: 0.9rem; }
-    </style>
-</head>
-<body>
-    <header>
-        <h1 style="margin:0;">Karen Arze</h1>
-        <p style="margin: 0.5rem 0 0; color: var(--warm-brown); font-style: italic;">Optometric Technician & Loving Mother</p>
-        <nav>
-            <a href={`${base}/`}>Home</a>
-            <a href={`${base}/resume`}>Resume</a>
-            <a href={`${base}/blog`}>Blog</a>
-        </nav>
-    </header>
-    <main class="content-wrapper">
-        <slot />
-    </main>
-    <footer>
-        <p>Virginia | {new Date().getFullYear()} Karen Arze</p>
-    </footer>
-</body>
-</html>
+<style is:global>
+  :root {
+    --primary-blue: #2c5282; /* Deep Professional Blue */
+    --soft-blue: #ebf8ff;    /* Light airy background */
+    --accent-blue: #63b3ed;  /* Bright, energetic blue */
+    --text-main: #2d3748;
+    --white: #ffffff;
+  }
+  body { 
+    background-color: var(--soft-blue); 
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+  }
+  .card { 
+    background: var(--white); 
+    border-radius: 12px; 
+    border-bottom: 3px solid var(--accent-blue);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  }
+</style>
