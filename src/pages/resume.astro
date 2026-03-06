@@ -2,76 +2,29 @@
 import MainLayout from '../layouts/MainLayout.astro';
 ---
 <MainLayout title="Resume">
-  <div class="resume-container">
-    <header class="resume-header">
-      <h2>Professional Experience</h2>
-      <span class="skill-badge">Microsoft Proficiency</span>
-    </header>
-
-    <div class="timeline">
-      <div class="job-entry">
-        <div class="job-date">Nov 2025 — Current</div>
-        <div class="job-details">
-          <h3>Optical Consultant</h3>
-          <span class="company">***** Eye Care</span>
-        </div>
-      </div>
-
-      <div class="job-entry">
-        <div class="job-date">Jan 2024 — Sep 2025</div>
-        <div class="job-details">
-          <h3>Optometric Technician & Sales Representative</h3>
-          <span class="company">National Vision / America’s Best</span>
-          <ul>
-            <li>Assisted Optometrists via <strong>Remote Systems</strong> for digital eye care testing.</li>
-            <li>Proficient in tonometer, autorefractor, retinal imaging, and visual field testing.</li>
-            <li>Managed insurance eligibility and appointment scheduling.</li>
-            <li>Trained new contact lens wearers.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="job-entry">
-        <div class="job-date">Feb 2022 — Dec 2023</div>
-        <div class="job-details">
-          <h3>Retail Banker</h3>
-          <span class="company">Woodforest Bank</span>
-          <ul>
-            <li>Provided financial literacy and recommended suitable bank services.</li>
-            <li>Handled branch duties: cash ordering, balancing vault, and ATM management.</li>
-            <li>Processed transactions, opened accounts, and filed disputes.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="job-entry">
-        <div class="job-date">2011 — 2013</div>
-        <div class="job-details">
-          <h3>Manager (Assistant & Sales Associate)</h3>
-          <span class="company">Salvation Army</span>
-          <ul>
-            <li>Simultaneously managed operations and performance for 3 locations.</li>
-            <li>Analyzed product quality to ensure accurate market pricing.</li>
-            <li>Organized intake and store layouts for maximum efficiency.</li>
-          </ul>
-        </div>
+  <div class="card resume-card">
+    <h2 class="section-title">Work Experience</h2>
+    
+    <div class="job">
+      <div class="job-header">
+        <strong>Optical Consultant — ***** Eye Care</strong>
+        <span class="date-tag">Nov 2025 - Current</span>
       </div>
     </div>
-  </div>
+
+    <div class="job">
+      <div class="job-header">
+        <strong>Optometric Technician — National Vision</strong>
+        <span class="date-tag">Jan 2024 - Sep 2025</span>
+      </div>
+      <p>Specialized in remote systems and clinical pre-testing (tonometer, retinal imaging).</p>
+    </div>
+    </div>
 </MainLayout>
 
 <style>
-  .resume-container { background: white; padding: 3rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-  .resume-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-bottom: 2px solid #f0f0f0; padding-bottom: 1rem; }
-  .skill-badge { background: #4a6741; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; }
-  
-  .timeline { border-left: 2px solid #e0e5df; margin-left: 20px; position: relative; }
-  .job-entry { position: relative; margin-bottom: 2.5rem; padding-left: 30px; }
-  .job-entry::before { content: ''; position: absolute; left: -9px; top: 5px; width: 16px; height: 16px; border-radius: 50%; background: #d4a373; border: 3px solid white; }
-  
-  .job-date { font-weight: bold; color: #d4a373; font-size: 0.85rem; margin-bottom: 5px; text-transform: uppercase; }
-  .company { display: block; color: #4a6741; font-weight: 600; margin-bottom: 10px; }
-  h3 { margin: 0; font-size: 1.3rem; }
-  ul { margin: 10px 0 0 0; padding-left: 1.2rem; font-size: 0.95rem; color: #555; }
-  li { margin-bottom: 5px; }
+  .resume-card { padding: 2rem; }
+  .section-title { color: var(--primary-blue); border-bottom: 2px solid var(--soft-blue); padding-bottom: 0.5rem; }
+  .job-header { display: flex; justify-content: space-between; margin-top: 1.5rem; color: var(--primary-blue); }
+  .date-tag { background: var(--soft-blue); padding: 2px 10px; border-radius: 4px; font-size: 0.85rem; }
 </style>
