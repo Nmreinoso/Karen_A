@@ -21,19 +21,21 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          # We removed the 'cache: npm' line because you don't have a lock file yet
 
       - name: Install dependencies
-        # We use 'npm install' instead of 'npm ci' because you are working in the browser
+        # This tells the robot to go into your subfolder first
         run: npm install
+        working-directory: ./Karen_A 
 
       - name: Build Astro
         run: npm run build
+        working-directory: ./Karen_A
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          # IMPORTANT: Point this to the dist folder inside your subfolder
+          path: ./Karen_A/dist
 
   deploy:
     needs: build
@@ -45,3 +47,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        
