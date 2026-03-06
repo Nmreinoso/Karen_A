@@ -1,24 +1,47 @@
 ---
-// src/layouts/MainLayout.astro
+const { title } = Astro.props;
 const base = import.meta.env.BASE_URL;
 ---
-<style is:global>
-  :root {
-    --primary-blue: #2c5282; /* Deep Professional Blue */
-    --soft-blue: #ebf8ff;    /* Light airy background */
-    --accent-blue: #63b3ed;  /* Bright, energetic blue */
-    --text-main: #2d3748;
-    --white: #ffffff;
-  }
-  body { 
-    background-color: var(--soft-blue); 
-    color: var(--text-main);
-    font-family: 'Inter', sans-serif;
-  }
-  .card { 
-    background: var(--white); 
-    border-radius: 12px; 
-    border-bottom: 3px solid var(--accent-blue);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-  }
-</style>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>{title} | Karen Arze</title>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+		<style is:global>
+			:root {
+				--primary-blue: #1e40af; /* Professional Navy */
+				--light-blue: #eff6ff;     /* Soft Sky Background */
+				--accent-blue: #60a5fa;    /* Bright Cornflower */
+				--text-dark: #1f2937;
+				--white: #ffffff;
+			}
+			body { 
+				font-family: 'Inter', sans-serif; 
+				background-color: var(--light-blue); 
+				color: var(--text-dark);
+				margin: 0;
+				line-height: 1.6;
+			}
+			nav { background: var(--white); padding: 1rem; text-align: center; border-bottom: 3px solid var(--primary-blue); box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+			nav a { margin: 0 15px; text-decoration: none; color: var(--primary-blue); font-weight: 700; text-transform: uppercase; font-size: 0.9rem; }
+			.container { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+			.card { background: var(--white); padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 2rem; border-left: 5px solid var(--accent-blue); }
+			h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--primary-blue); margin-top: 0; }
+			.placeholder-img { background: #e2e8f0; border: 2px dashed #94a3b8; display: flex; align-items: center; justify-content: center; color: #64748b; border-radius: 8px; font-style: italic; }
+		</style>
+	</head>
+	<body>
+		<nav>
+			<a href={`${base}/`}>Home</a>
+			<a href={`${base}/resume/`}>Resume</a>
+			<a href={`${base}/blog/`}>Blog</a>
+		</nav>
+		<div class="container">
+			<slot />
+		</div>
+		<footer style="text-align: center; padding: 2rem; color: #64748b; font-size: 0.8rem;">
+			© 2026 Karen Arze • Virginia
+		</footer>
+	</body>
+</html>
