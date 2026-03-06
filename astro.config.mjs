@@ -1,6 +1,9 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
+  // Your GitHub Pages URL
   site: 'https://Nmreinoso.github.io',
-  base: '/Karen_A', // Important: The name of your GitHub repository
+  // Your Repository Name
+  base: '/Karen_A', 
   output: 'static',
+});
